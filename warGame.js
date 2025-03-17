@@ -25,6 +25,14 @@ function draw(){
         console.log(data)
         document.querySelector('#player1').src = data.cards[0].image
         document.querySelector('#player2').src = data.cards[1].image
+ 
+        if(data.cards[0].value > data.cards[1].value){
+            document.querySelector('h3').innerText = "Player 1 is the winner!"
+        }else if(data.cards[0].value < data.cards[1].value){
+            document.querySelector('h3').innerText = "Player 2 is the winner!"
+        }else if(data.cards[0].value === data.cards[1].value){
+            document.querySelector('h3').innerText = "It's a tie!!"
+        }
     })
         .catch(err => {
             console.log(`error ${err}`)
