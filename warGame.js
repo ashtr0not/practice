@@ -38,7 +38,7 @@ function draw(){
         // }
         if(Number(val1 > val2)){
             document.querySelector('h3').innerText = "Player 1 is the winner!"
-        }else if(val1 < val2){
+        }else if(Number(val1 < val2)){
             document.querySelector('h3').innerText = "Player 2 is the winner!"
         }else if(Number(val1 === val2)){
             document.querySelector('h3').innerText = "It's a tie!!"
