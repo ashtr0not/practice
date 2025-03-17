@@ -26,15 +26,41 @@ function draw(){
         document.querySelector('#player1').src = data.cards[0].image
         document.querySelector('#player2').src = data.cards[1].image
  
-        if(data.cards[0].value > data.cards[1].value){
+        let val1 = cardValue(data.cards[0].value)
+        let val2 = cardValue(data.cards[1].value)
+
+        // if(Number(data.cards[0].value > data.cards[1].value)){
+        //     document.querySelector('h3').innerText = "Player 1 is the winner!"
+        // }else if(Number(data.cards[0].value < data.cards[1].value)){
+        //     document.querySelector('h3').innerText = "Player 2 is the winner!"
+        // }else if(Number(data.cards[0].value === data.cards[1].value)){
+        //     document.querySelector('h3').innerText = "It's a tie!!"
+        // }
+        if(Number(val1 > val2)){
             document.querySelector('h3').innerText = "Player 1 is the winner!"
-        }else if(data.cards[0].value < data.cards[1].value){
+        }else if(val1 < val2){
             document.querySelector('h3').innerText = "Player 2 is the winner!"
-        }else if(data.cards[0].value === data.cards[1].value){
+        }else if(Number(val1 === val2)){
             document.querySelector('h3').innerText = "It's a tie!!"
         }
     })
         .catch(err => {
             console.log(`error ${err}`)
         })
+}
+
+function cardValue(val){
+    if(val === "ACE"){
+        return 14
+    }else if(val === "KING"){
+        return 13
+    }else if(val === "QUEEN"){
+        return 12
+    }else if(val === "JACK"){
+        return 11
+    }else if(val === '10'){
+        return 10
+    }else{
+        return val
+    }
 }
