@@ -5,9 +5,9 @@ const PORT = 8000
 
 app.use(cors())
 
-let workout = {
+let workout = { //AKA Express API
     'arm': { // This is my own API I had created. This API can be seen in post man under localhost:8000/api/workout 
-        muscleGroup : ['bicep', 'forearm', 'triceps'],
+        muscleGroup : ['bicep', ' forearm', ' triceps'],
         exercise : ['Bicep Curl', 'Pull-up', 'Chin-up', 'Concentration curl', 'Bent-over row'],
         description : 'Biceps are the large muscles located in your upper arm, extending from the shoulder to just above the elbow'
     },
@@ -16,9 +16,9 @@ let workout = {
         exercise : ['Leg Extensions', 'Calf Raises', 'Squats'],
         description : 'The quads are a group of five muscles located in your upper leg at the fron of your thigh.'
     },'unknown': {
-        muscleGroup : 'unknown',
-        exercise : 'unknown',
-        description : 'unknown'
+        muscleGroup : ['unknown','unknown'],
+        exercise : 'unknownwww',
+        description : 'I am unknown'
     }
 }
 
@@ -33,7 +33,7 @@ app.get('/api/workout/:bodyPart', (request,response) => {
     response.json(workout[bodyPart]) // pulling from const bodyPart above in line 31
     //localhost:8000/api/workout/arm  will pull from the arm object in the API above 
     }else{
-        response.json(workout['unknown'])
+        response.json(workout['unknown']) // this defaults to unknown the the query parameter isnt met 
     }
 })
 
