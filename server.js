@@ -29,8 +29,12 @@ app.get('/', (request, response) => { // the '/' is where the home page or root 
 
 app.get('/api/workout/:bodyPart', (request,response) => {
     const bodyPart = request.params.bodyPart.toLowerCase() // request: look at the request params: look at the parameter bodyPart bodyPart: grab the parameter in the URL toLowerCase(): gets rid of case sensitivity 
+    if(workout[bodyPart]){ // if conditional to default to unknown if name isn't found 
     response.json(workout[bodyPart]) // pulling from const bodyPart above in line 31
     //localhost:8000/api/workout/arm  will pull from the arm object in the API above 
+    }else{
+        response.json(workout['unknown'])
+    }
 })
 
 app.listen(PORT, () => {
