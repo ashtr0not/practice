@@ -1,0 +1,50 @@
+#block1{
+    background-color: azure;
+
+}
+header{
+    display: inline-flex;
+    color: rgb(61, 61, 139);
+}
+#links{
+    padding: 34px 430px 0 350px;
+    /* padding: 34px 25% 0 25%; */
+}
+#link{
+    padding-left: 50px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+#section1,#section2{
+    padding: 75px 0 0 150px;
+    /* padding: 100px; */
+}
+
+button{
+    color: white;
+    background-color: rgb(61, 61, 139);
+}
+#section2{
+    display: inline-flex;
+    padding: 100px 100px 50px 100px;
+    /* padding: 100px; */
+}
+#features{
+    padding: 50px;
+}
+#section3{
+    padding-left: 10%;
+}
+@media screen and (max-width: 600px){     
+    #links,#b1{
+        display: none;
+    }
+    #section1{
+        padding: 5px;
+    }
+    h2{
+        text-align: center;
+    }
+}
