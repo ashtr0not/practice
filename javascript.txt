@@ -1,0 +1,1266 @@
+JAVASCRIPT
+################################################################################################################################################
+
+Program : a set of instructions that you tell your computer to do in a language that computers can understand
+
+JavaScript : a language to communicate our ideas/instructions we pass on to computers to tell it what to do
+
+Logic Gate : basics of how were going to put a computer together 
+
+Syntax : "Spelling and Grammer" rules of a programming language
+
+################################################################################################################################################
+
+DOM(Document Object Model) : aka the actual web page
+
+JavaScript Breakdown Example: 
+
+document.getElementById('purple).onclick = partyPurple // This is an EVENT LISTENER
+
+function partyPurple(){
+    document.querySelector('body).style.backgroundColor = 'rgba(241,63,247,1)'
+    document.querySelector('body').style.color = 'white'
+}
+
+document : the content on the web browser. Go to that document in the web browser // can be used in the function as well
+
+getElementById : and inside of the document, get the element with the ID 'purple'
+
+onclick : indicating that when you click to run the set of instructions that it is equaled to 
+
+partyPurple : set of instructions that is going to be followed when purple is clicked
+
+querySelector :  usually means 'find the'. in this case we are finding the body bc "querySelector('body')"
+
+.style.backgroundColor : focused on the style and background color specifically
+
+addEventListener : listens for an even (such as click, mouseenter, etc..)
+
+.toLowerCase() : helps read inputed values that are inputed with any capital letters
+                 ex. document.querySelector('#ID).value.toLowerCase()
+
+################################################################################################################################################
+
+THE BIG 4 : Elements that help you build whatever you want 
+
+Variables : the entity we use to store values (Memory/Data Buckets)
+
+            Declaration: let age // let creates a space for memory
+            Assignment : age = 25 // putting a value in to a space in memory 
+            Both at the same time : let age = 25 // both can be used in the same line 
+
+*****
+
+Variables JavaScript Breakdown : 
+
+let total = 0 //variable of total is set to 0
+
+document.querySelector('#pumpkin').addEventListener('click', makeZero) // in the document, we are finding something witht he ID pumpkin and once clicked itll run the makeZero function
+document.querySelector("#dominosPizza').addEventListener('click', jumanji)
+document.querySelector('#zebra').addEventListener('click', add9)
+document.querySelector('#cantThinkOfAnything').addEventListener('click', sub2)
+
+function makeZero() {
+    total = 0
+    document.querySelector('#placeToPutResult').innterText = total //interText : adding text back to the DOM 
+}
+
+function jumanji() {
+    total = total + 3
+    document.querySelector('#placeToPutResult').innterText = total // goes to document, locates the ID #placeToPutResult and place text inside of it equal to total 
+}
+
+function add9() {
+    total = total + 9
+    document.querySelector('#placeToPutResult').innerText = total
+}
+
+*****
+
+Conditionals : just checking to see if something is true and if the think is true, you do what's inside the curly braces
+
+*****
+
+ex. if(condition is true) {
+    //do this cool stuff
+}else if(condition is true){
+    //do this other cool stuff
+}else{
+    //default cool stuff *if everything above fails, else will automatically run 
+}
+
+const pizza = "Dominoes"
+
+if (pizza === "Papa Johns") {
+    console.log("Scram!)
+}else if (pizza === "Dominos) { // This is the correct portion that will run BUT if it were spelled Dominoes, the else would automatically run
+    console.log("All aboard the train to flavor down")
+}else {
+    console.log("What are you even doing with your life)
+}
+
+Multiple Conditionals : 
+
+if (name === "Bruce"  && parents === "Dead"){ //if only 1 of these conditions is true, the instructions wont run. BOTH have to be true
+    //turn of the bat signal
+}
+
+if (day === "Saturday" || day === "Sunday"){ //if only 1 of them IS true, the instructions will run. ONLY 1 NEEDS TO BE TRUE
+    // It is the weekend
+}
+
+*****
+
+
+FUNCTIONS : Functions are simple sets of instructions
+            Functions are reusable
+            Functions perform one action as a best practice
+            Functions for the basic "building blocks" of a program
+
+function name(parameters){
+    //body
+}
+//call
+name(arguments)
+
+function yell(word){
+    alert(word)
+}
+yell("HELLO)
+
+function yell(word, otherWord){
+    alert(word)
+    alert(otherWord)
+}
+
+yell("HELLO","GOODBYE")
+
+***NEW ES6 WAY TO CREATE FUNCTIONS
+
+let myFunction = (a,b) => a * b //new way 
+ 
+
+*****
+
+Loops : Loops repeat an acion some number of times
+        There are 3 main types of loops in JavaScript
+            1. For Loops
+            2. While Loops //Good for when you don't know the end condition like you would in for loops
+            3. Do While Loops
+        Each type offers a different way to determine the start and end points of a loop
+
+For Loop
+
+for ([initialExpression]; [conditionExpression]; [incrementExpression]){
+    // do stuff
+}
+
+ex. 
+
+for (let i = 1; i < 5; i++){
+    console.log(i)
+}
+
+While Loop
+
+let count = 0
+
+while (count < 5){
+    console.log(count)
+    count+ +    
+}
+
+################################################################################################################################################
+
+PSEUDO CODE  : Breaking down the code on steps of what you need to do (Not using actual code)
+
+\\REFER TO CLASS 10 TO SEE LIVE EXAMPLES
+
+\\This is the smurf that listens to the event. Usually put on a button tag in HTML
+document.querySelector('#idOfButton').addEventListener('click or whatever EventListener you want', functionName) 
+
+function functionName(){
+
+    // This is the value that it typed in to the input tag in HTML. it gets stored in the const itemName
+    const itemName = document.querySelector('#idOfInput').value
+
+    // This displays the text from the input field in whichever HTML tag has the ID '#idOfHTMLTAGUsedToDisplayInput' 
+    document.querySelector('#idOfHTMLTAGUsedToDisplayInput').innerText = `${itemName}`
+}
+
+*****
+
+document.querySelector('#ID').style.display = "none"
+
+################################################################################################################################################
+
+ARRAYS : a data structure to store ordered collections
+         array elements are numbered starting with 0
+         arrays have many methods to manage the order of elements
+         can be created by a constructor or literal notion
+
+*****
+
+Declaring Arrays (2 Ways): 
+
+let newArr = new Array() // Array Constructor
+
+let newArr = [] // Literal Notation
+
+ex. 
+
+newArr = ['Zebra', true , 21] // Arrays are populated with elements. Elements can be of any type
+
+Empty spaces leave an empty element
+
+*****
+
+Array Indexing: 
+
+newArr = ['Zebra' , , true , 21]
+
+console.log( newArr[0] ) //Zebra
+console.log( newArr[1] ) //Undefined
+console.log( newArr[2] ) //true
+console.log( newArr[3] ) //21
+
+**Elements can be accessed by their index numbers
+
+Updating elements in an Array
+
+newArr = ['Zebra' , , true , 21]
+
+newArr[1] = 'Bob'
+
+console.log(newArr) // ['Zebra' , 'Bob' , true , 21]
+
+**You can overwrite whole arrays by assigning an array to a different array
+
+let cars = ['Honda' , 'Toyota' , 'Ford' , 'Tesla']
+let nums = [1 , 2 , 3]
+cars  = nums
+console.log(cars) //[1 , 2 , 3]
+
+*****
+
+Array Length:
+
+console.log(newArr.length) //4
+
+*****
+
+Array Iteration: Iterates through an array passing in the value and index of each element
+
+ex. 
+
+let bestColors = ['green', 'blue', 'yellow' , 'black']
+
+for(let i = 0; i < bestColors.length; i++){
+    console.log(bestColors[i])
+}
+
+Built In Method for the above code (alternate)
+
+//Loops once for each element in your array
+
+let bestColors = ['green','blue','yellow','black']
+
+bestColors.forEach((x,i) => console.log(x))
+
+// x = element
+// i = index of the element
+
+Adding All Elements In An Array:
+
+function adding(arr){
+    let adder = 0
+    for(let i = 0; i < arr.length; i++){
+        adder = adder + arr[i] OR adder += arr[i]
+    }
+}
+
+Multiplying All Elements In An Array
+
+function multuplying(arr){
+    let product = 1
+    for(i=0; i<arr.length; i++){
+        product = product * arr[i] OR product *= arr[i]
+    }
+}
+
+*****
+
+Other Array methods: 
+
+*Remove an item from the beginning of an Array
+
+.shift()
+
+let bestRappers = ['Tupac', 'Biggie', 'Mos Def']
+let removed = bestRappers.shift()
+consol.log(bestRappers) // ['Biggie','Mos Def']
+
+*Remove an item from the end of the array
+
+.pop()
+
+let bestRappers = ['Biggie', 'Mos Def']
+let removed = bestRappers.pop()
+consol.log(bestRappers) // ['Biggie']
+
+*Add an item to the beginning or an Array
+
+.unshift()
+
+let bestRappers = ['Mos Def']
+let add = bestRappers.unshift('Future')
+console.log(bestRappers) // ['Future', 'Biggie']
+
+*Add an item to the end or an Array
+
+.push()
+
+let bestRappers = ['Future', 'Biggie']
+let add = bestRappers.unshift('Travis Scott')
+console.log(bestRappers) // ['Future', 'Biggie','Travis Scott']
+
+*Creating a new array using .map() where all items in the array are changed to s specific value
+
+.map(x => 'element')
+
+let bestRappersOfAllTime = bestRappers.map(x => 'Dylan')
+console.log(bestRappersOfAllTime) // ['Dylan','Dylan','Dylan']
+
+################################################################################################################################################
+
+OBJECTS: Objects are a collection of variables and Functions    
+         Objects represent the attributes and behavior of something used in a program
+         Object variables are called properties and object functions are called methods
+         Objects store "keyed" collections
+
+    Attributes: Also known as properties of an object (adjectives)
+    Behaviors: Might contain functions that manipulate the object (verbs)
+
+    Ex. 
+
+    Stopwatch Object
+    Attributes: Properties might contain hours, another to represent minutes and another to represent seconds, color and brand
+    Behaviors: Methods might contain functions to start() and stop() the time
+
+    let stopwatch = {} //Literal Notation
+
+    stopwatch.currentTime = 12 //Property created with DOT NOTATION
+    stopwatch.tellTime = function(time){ //Method because methods are functions
+        console.log(`The current time is ${time}.`)
+    }
+
+    stopwatch.tellTime(stopwatch.currenttime) //Method Call
+
+How to create objects: 
+
+Constructors then Classes
+
+Ex. CAR FACTORY
+
+Constructor: 
+
+function MakeCar(carMake, carModel, carColor, numOfDoors){
+    this.make = carMake
+    this.model = carModel
+    this.color = carColor
+    this.doors = numOfDoors
+    this.honk = function(){
+        alert('BEEP BEEP MUTHA FUKKA')
+    }
+    this.lock = function(){
+        alert(`Locked ${this.doors} doors!`)
+    }
+}
+
+let hondaCivic = new MakeCar('Honda', 'Civic', 'Silver', 4)
+
+hondaCivic.color //'Silver'
+
+let teslaRoadster = new MakeCar('Tesla', 'Roadster', 'Red', 4)
+
+teslaRoadster.numOfDoors // '2'
+
+NEW WAY TO CONSTRUCT OBJECTS USING CLASSES
+
+Ex. 
+
+class MakeCar{
+    constructor(carMake, carModel, carColor, numOfDoors){
+        this.make = carMake
+        this.model = carModel
+        this.color = carColor
+        this.doors = numOfDoors
+    }
+    honk(){
+        alert('BEEP BEEP FUCKER')
+    }
+    lock(){
+        alert(`Locked ${this.doors} doors!`)
+    }
+}
+
+let hondaCivic = new MakeCar('Honda', 'Civic', 'Siver', '4)
+
+
+
+Prototype: Prototype is another object that is used as a fallback source of properties 
+           **This means that you can add a property later after the object has already been created
+
+PROTOTYPAL INHERITANCE: if the object does not have that property or method, it looks up the chain for it
+
+ex. 
+
+console.log(teslaRoadster.bluetooth) //Undefined
+
+MakeCar.prototype.bluetooth = true // Ex of a prototype
+
+console.log(teslaRoadster.bluetooth) //true
+
+Global Object Prototype: Object that every object inherits from (Grandma)
+
+################################################################################################################################################
+
+API (Application Programming Interface): A simple interface for some complex action
+                                         Think of a restaurant menu! Remember those...
+                                         Let's one thing communicate with another thing without having to know how things are implemented
+                                         URL is the interface
+
+Your App   ---(Request)-->   API
+           <--(JSON)-----        JSON = JavaScript Object Notation
+
+Ex.
+
+fetch("https://dog.ceo/api/breeds/image/random")
+    .then(res => res.json()) //Parse response as JSON
+    .then(data => { //data is our parameter
+        console.log(data) // just to confirm that the image is in the console
+        document.querySelector('img').src = data.img //this shows the actual picture
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    })
+
+**Some APIs need to Query Parameters to return the correct data
+
+Ex. //Refer to Class 20 3:00:00
+
+//the user will enter a cocktail. Get a cocktail name, photo
+//and instuctions and place them in the DOM
+document.querySelector('button').addEventListener('click', getDrink)
+
+function getDrink(){
+let drinkChoice = document.querySelector('input').value
+
+const url = 'https://wwww.thecocktaildb.com/api/json/v1/1/search.php?s='+drinkChoice //notice this is the inputted value from the line above
+
+fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data.drinks[0]) //getting the array back 
+        document.querySelector('h2').innerText = data.drinks[0].strDrink //first element of the array
+        document.querySelector('img').src = data.drinks[0].strDrinkThumb //src for image and strDrinkThumb was a value in the array
+        document.querySelector('h3').innerText = data.drinks[0].strInstructions //pulls instructions from the strInstructions value in the array
+
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    })
+}   
+
+NASA API Ex
+
+
+document.querySelector('button').addEventListener('click', getFetch) //only occurs when button is pushed
+
+function getFetch(){
+    let val = document.querySelector('input').value
+    const url = 'https://api.nasa.gov/planetary/apod?api_key=hTViEQ2HjUMsCtBzJmLbobudlbrHvlUwoT33Inrb&date=2021-02-03' 
+                //After apod, we had to add '?api_key=hTViEQ2HjUMsCtBzJmLbobudlbrHvlUwoT33Inrb This was obtained via email and pasted
+                //at the end, we could look at a specific date by adding &date=
+                //You must get the correct format from the API documentation provided by API host
+                //BUT the above is hard coded with the date. to let the user input the date see below:
+    const url = 'https://api.nasa.gov/planetary/apod?api_key=hTViEQ2HjUMsCtBzJmLbobudlbrHvlUwoT33Inrb&date='
+
+fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        document.querySelector('h1').innerText = data.title //Placed the date from the object in the h1 tag
+        if(data.media_type === "image"){ //needed if/else statement to differentiate media type
+            document.querySelector('img').src = data.hdurl //placed the image from the object in the img tag
+        }else{
+            document.querySelector('iframe').src = data.url //placed video in the iframe tag
+        }   
+        document.querySelector('p').innerText = data.explanation
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    }
+    )
+}
+
+Local Storage: allows you to store data across your browser sessions
+               can be located in the inspector under Application
+
+Put Item Into Local Storage
+localStorage.setItem('bestFriend', 'Bob')
+
+Get Item Out Of Local Storage
+localStorage.getItem('bestFriend')
+
+Remove Item Out Of Local Storage
+localStorage.removeItem('bestFriend', 'Bob')
+
+Remove ALL Out Of Local Storage
+localStorage.clear()
+
+DND API Practice Example: 
+
+document.querySelector('button').addEventListener('click', getFetch)
+
+function getFetch(){
+    let choice = document.querySelector('input').value
+    // let choiceCap = choice.replace(/^./, char => char.toUpperCase())
+    // choice = choiceCap
+    // console.log(choiceCap)
+    const url = `https://www.dnd5eapi.co/api/2014/spells/${choice}`
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            document.querySelector('h1').innerText = `${choice}`
+            document.querySelector('h3').innerText = data.classes[0].name
+            console.log(data.subclasses)
+            data.subclasses.forEach( obj => {
+                //Step 2: Console.Log the subclasses
+                console.log(obj.name)
+                //Step 3: Get the subclasses in to the DOM
+                const li = document.createElement('li') 
+                li.textContent = obj.name
+                document.querySelector('ul').appendChild(li) // This line adds obj.name to the li
+            });
+            
+            document.querySelector('p').innerText = data.desc
+        })
+        .catch(err => {
+            console.log(`error ${err}`)
+        })
+}
+
+BOOK TRACKER API Example: 
+
+//GOAL: Get a book back and place book in to local storage
+// localStorage.clear()
+//Add an event listener to run function
+document.querySelector('button').addEventListener('click', getFetch)
+
+//add function to get the API
+function getFetch(){
+    let choice = document.querySelector('input').value
+    const url = `https://openlibrary.org/isbn/${choice}.json`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        // localStorage.setItem('title', title)
+        let title = data.title
+        if(!localStorage.getItem('books')){ // if item is not in local storage
+            localStorage.setItem('books', title) //then place the item in local storage
+        }else{
+            let books = localStorage.getItem('books') + ' , ' + title //else concatenate  adding to what's in locat storage
+            localStorage.setItem('books', books)
+        }
+        console.log(title)
+        document.querySelector('h2').innerText = title
+
+        })
+        .catch(err => {
+            console.log(`error ${err}`)
+        })
+}
+
+
+################################################################################################################################################
+
+OBJECT ORIENTED PROGRAMMING (OOP):
+
+THE FOUR PILLARS
+
+Encapsulation(Binds): The process of storing functions(methods) with their associated data(properties) - in one thing (object)*
+                      Fusing data and functionality together
+                        - made it easier to add new stuff
+                        - made it easier to reaf through what was already coded
+                        - and made it so you were not afraid to make changes
+Abstraction(Hides)  : Hide details and show the essentials (Simple, Predictable and Manageable)
+                        - Complex or unnecessary details are hidden(See BETTER CODE EXAMPLE below). 
+                        - This enables you to implent things without understanding or even thinking about all the hidden complexity 
+                        - (Smaller more manageable pieces of code and ensuring you only need to do stuff once)
+                        - this helps you to split the complexity of your software projects into manageable parts
+Inheritance         : Make a class from another class for a hierarchy of classes that share a set of properties and methods 
+                        - Gets rid of a bunch of redundant code
+Polymorphism        : A piece of code that works automagically with a bunch of different objects
+                        - Ploymorphism allows us to override a method in every child class
+                          so it will do what we want
+                      Code written to the an interface that automatically knows how to work with any number
+                      of different objects that provide the interface 
+
+                        - Helps you avoid if/else and switch cases
+                        - Makes your code more resuable 
+                        - Supports the other pillars
+
+Notes about OOP: 
+
+let seriousBusinessPerson = {
+    hourlyRate: 250,
+    hours: 160,
+    taxRate: .35,
+    calculateProfit: function(){
+        return this.hourlyRate * this.hours * (1-this.taxRate)
+    }
+    calculateTaxesHeld: function(){
+        return.this.hourlyRate * this.hours - this.calculateProfit()
+    }
+}
+
+Another Example (BAD CODE): 
+
+function AgencyContractor(hourlyRate, hours, taxRate){
+    this.hourlyRate = hourlyRate
+    this.hours = hours
+    this.taxRate = taxRate
+    this.calculateProfit = function(){
+        return this.hourlyRate * this.hours * (1-this.taxRate)
+    }
+    this.invoiceClient = function(){
+        return `Your invoice total is ${this.hourlyRate * this.hours}`
+    }
+}
+
+let leon = new AgencyContractor(250,160,.35)
+console.log(leon.invoiceClient()) // 40000
+console.log(leon.hourlyRate) //250
+console.log(leon.calculateProfit()) //26000
+
+Another Example (BETTER CODE: ABSTRACTION): 
+
+function AgencyContractor(hourlyRate, hours, taxRate){
+    this.hours = hours
+    this.taxRate = taxRate
+    let hourlyRate = hourlyRate //notice the let. this also hides this from user view. users cannot access (see results below)
+    let calculateProfit = function(){ //notice the let. hourlyRate is now a local variable (no longer part of the object) 
+        return this.hourlyRate * this.hours * (1-this.taxRate)
+    }
+    this.invoiceClient = function(){
+        return `Your invoice total is ${this.hourlyRate * this.hours}` // hourlyRate can still be used in the object but this cannot be accessed outside of the object
+    }
+}
+
+let leon = new AgencyContractor(250,160,.35)
+console.log(leon.invoiceClient()) // 40000
+console.log(leon.hourlyRate) //undefined
+console.log(leon.calculateProfit()) //Uncaught TypeError: leon.calculateProfit is not a function
+
+LET'S BUILD A FARM WITH MULTIPLE ANIMALS! (INHERITANCE)
+
+We do this with 'extends'
+
+class Animal{ //parent class
+    constructor(name,age,farmName){
+        this._name = name // ._name shows that this can't/SHOULDNT be changed after assignment
+        this.age = age
+        this.farmName = farmName
+    }
+    speak(){
+        console.log(`${this.name}` makes a sound)
+    }
+    get name(){ // getter is a special kind of method
+        return this._name
+    }
+}
+class Dog extends Animal{ //child class (subclass)
+    constructor(name,age,farmName,breed){
+        super(name,age,farmName) // super gets us the name property from the parent 
+        this.breed = breed
+    }
+    speak(){
+        super.speak() //This pulls from the parent class
+        console.log(`${this.name} barks`) // 
+    }
+}
+
+class Cat extends Animal{
+    constructor(name,age,breed,sound){
+        super(name,age,breed)
+        this.sound = sound
+    }
+    sleep(){
+        console.log(`${this._name} is sleeping ${this.sound}`)
+    }
+    speak(){
+        super.speak()
+        console.log(`${this.name} meows`)
+    }
+
+
+}
+
+let simba = new Dog('Simba','Sheperd')
+
+simba.name // simba
+simba.name = 'bob' // this will not reassign due to the ._name and the get name()
+
+let kaleo = new Dog('kaleo', .8, 'MinPin')
+let louie = new Dog('louie', 8, "Chiuaua)
+let kati = new Cat('kati', 2,'calico','quietly')
+
+POLYMORPHISM
+
+let farm = [kaleo,louie,kati]
+
+for(a of farm){ //This is an example of Polymorphism!!!!!!
+    a.speak()
+}
+
+// kaleo barks
+// louie barks
+// kati meows
+
+for (a of farm){ //This is bad code that could work but Polymorphism is better. SEE ABOVE
+    if(a instanceOf Dog){
+        console.log('Bark)
+    }else if(a instanceOf Cat){
+        console.log('Meow)
+    }
+}
+
+*** Code written to use an interface automatically knows how to work with any number
+    of different objects that provide the interface
+
+*** Sibling descendants of a base class will all have the same interface
+    but varying implementations
+    (This means that the children classes will gain the method from the parent class
+    BUT if will different for each child class eg. bark or meow)
+
+*** When you are not sure of the objects type at runtime, the most specific method is called
+    (This means that the child methods are ran first)
+    Therefore the behavior of the method called may differ, depending on the
+    objects type at runtime
+
+*** Provides a way to perform a single action in different forms
+    Provides an ability to call the same method on different JavaScript objects
+
+Instead of needing to use conditionals and switch cases, we can use Polymorphism 
+
+
+
+################################################################################################################################################
+
+(Paper Boy Delivery Example)
+Synchronous: Waiting for someone to come to the door before moving on to the next house
+Asynchronous: Moving on to the next house (things happening in the background)
+
+Javascript is single-threaded: Synchronous aka processes one operation at a time
+
+Our JS is running in the browser
+    - Browsers have a bunch of APIs we can use that are Asynchronous and enable us to keep looking at cute cat photos while those operations
+      are being processed Asynchronously
+
+DOM API: the DOM(Document Object Model) is essentialy the API one uses to manipulate an HTML (or XML) document -- usually using JavaScript 
+         - document.querySelector() is a web API 
+         - So yea, JS can do a lot of "blocking" stuff in the browser because it is handing that stuff off to async Web APIs
+         - BUT we are going to need to know hot to handle respinses coming back from those Web APIs
+            - JS does this with callbacks, promises, and eventually async/await
+
+setTimeout() and setInterval() are not part of the Javascript specification (They are WebAPIs)
+    - Most environments include them... like all browsers and Node.js 
+    - setTimeout() runs the console.log after a certain amount of time 
+        - ex. setTimeout(() => console.log("Paper devlivered to house two"),3000) //will run 3 seconds later
+              setTimeout(() => console.log("Paper devlivered to house two"),0) // This will show after houseThree() 
+                because the check will happen after houseThree is ran even tho it's 0 seconds (SEE NODE.JS CLASS 30)
+
+High Order Function: You can have a function that takes another function as an argument  
+                     - addEventListener('click', callback)
+
+Call Back: a callback is the function that has been passed as an argument 
+            - callbacks are not really "a thing" in JS just a convention (a way of doing something)
+            - ex. function houseOne(){
+                        console.log("Paper devlivered to house one")
+                    }
+                    function houseTwo(callback){
+                        setTimeout(() => {
+                            console.log("Paper devlivered to house two")
+                            callback() // houseThree
+                            },3000)
+                        
+                        
+                    }
+                    function houseThree(){
+                        console.log("Paper devlivered to house three")
+                    }
+
+                    houseOne()
+                    houseTwo(houseThree) //houseThree is the callback
+            - callback fired when async task or another function is done
+
+Promise: a promise is an object that represents the eventual completion or failure of 
+         an async operation and its value 
+         - an object that MAY have a value in the future 
+         - a promise can have three possible states
+            - pending: initial state, neither fulfilled or rejected
+            - fulfilled: meaning that the operation was completed successfully 
+            - rejected: meaning that the operation failed
+         - .then() : a promise object method that runs after the promise "resolves" or finishes
+         - .then(value) : whatvever value the promise object has gets passed as an argument
+
+Fetch returns a promise (used in APIs) 
+
+ex.
+
+const promise = new Promise((resolve,reject) => {
+    const error = false 
+    if(!error){
+        resolve('Promise has not been fulfilled')
+    }else{
+        reject('Error: Operation has failed')
+    }
+})
+console.log(promise)
+promise
+    .then(data => console.log(data)) // fires when the promise is resolved
+    .catch(err => console.log(err)) // fired when primise is rejected
+
+ex. Chaining Asynchronous code (Crazy Looking Code) 
+
+function houseOne(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            resolve('Paper delivered to house 1')
+        },1000)
+    })
+}
+function houseTwo(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            resolve('Paper delivered to house 2')
+        })
+    })
+}
+function houseThree(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            resolve('Paper delivered to house 3')
+        },2000)
+    })
+}
+houseOne()
+    .then(data => console.log(data))
+    .then(houseTwo)
+    .then(data => console.log(data))
+    .then(houseThree)
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+
+Async/Await(ES8)
+    - Await: waits for an async process to complete inside an async function
+    - a way to handle async responses
+    - promises underneath the hood 
+        - syntactic sugar on top of promises, making asynchronous code easier
+          to write and to read after 
+
+ex. Same Example as before BUT uses the async keyword (line 898)
+
+function houseOne(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            resolve('Paper delivered to house 1')
+        },1000)
+    })
+}
+function houseTwo(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            resolve('Paper delivered to house 2')
+        })
+    })
+}
+function houseThree(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            resolve('Paper delivered to house 3')
+        },2000)
+    })
+}
+async function getPaid(){
+    const houseOneWait = await houseOne()
+    const houseTwoWait = await houseTwo()
+    const houseThreeWait = await houseThree()
+    console.log(houseOneWait)
+    console.log(houseTwoWait)
+    console.log(houseThreeWait)
+}
+getPaid()
+
+NEW ASYNC/AWAIT Syntax(REPLACING THE ORIGINAL FETCH FUNCTIONS FOR APIs)
+
+async function getACuteDogPhoto(){
+    const res = await fetch('https://dog.ceo/api/breeds/image/random')
+    const data = await res.json()
+    console.log(data)
+}
+getACuteDogPhoto()
+
+//Research how to catch an error if rejected using try/catch
+
+EVENT LOOP 
+
+Event Loop: The Event Loop monitors the Callback Queue and Job Queue and decides what needs to be pushed to the Call Stack
+
+Call Stack -> Web API -> Task Queue(or Job Queue) -> Call Stack -> Console 
+
+Data Structures: a way to organize some data
+
+Two ways to organize data: - Queue: like a real queue, the first element which is added to the list, will be the first element out
+                                    This is called a FIFO(First In First Out) structure 
+                                    -ex. 
+                                        let queue = []
+                                        queue.push(2) // queue is now [2]
+                                        queue.push(5) // queue is now [2,5]
+                                        let i = queue.shift() //queue is now [5]
+                                        alert(i) // displays 2
+                           - Stack: the first pancake made is the last pancake served
+                                    this is called a stack 
+                                    the first element which was added to the list, will be the last one out. this is called 
+                                    a LIFO (Last In First Out) structure 
+                                    -ex. 
+                                        let stack = []
+                                        stack.push(2) //stack is now [2]
+                                        stack.push(5) // stack is now[2,5]
+                                        let i = stack.pop() // stack is now [2]
+                                        alert(i) // displays 5
+
+
+JS IS RUNNING IN THE BROWSER 
+    - V8 Engine (Parse Code > Runnable Commands)
+        - Series of tools we have in the Chrome browser (and node) that helps break down our Javascript for the computer to understand
+    - Window Runtime(Hosting Environment)
+        - Gives us access to web APIs
+        - Passes stuff to Libevent(Handles the Event Loop)
+
+################################################################################################################################################
+
+BACK END BABY
+
+* Javascript does not have access to the DOM natively built in
+* Javascript needed Web APIs to handle async and bunch of stuff in the browser
+* Javascript is sandboxed in the browser
+    - The browser is a program in your computer that JS is running 
+* Javascript is a language that can only do what the hosting environment allows 
+
+What do servers need that a browser might not need?
+    - Disk access: ability to read files 
+        - hardrive/ssd 
+    - Network access: being able to send files to you to request them
+        - internet, request/responses 
+* A server is made to serve files and needs network access to be able to repspond with those files
+
+What if there was a hosting environment that allowed JS to have disk and network access?
+
+NODE.JS 
+    - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine
+    - Node.js is a hosting environment built on the same shit that let's us run JS in the browser BUT NOW EVERYWHERE ELSE 
+        - The same shit that lets you run JS in the browser can now be used to run JS on Servers, Desktops and elsewhere
+        - The hosting environment that we run Javascript is the runtime 
+    - And just like the browser's Web APIs, Node comes with a bunch of stuff 
+    - Node comes with built in modules (libraries eg. Event Loop, Async I/O, etc.) that allows us to do asynchronous stuff
+      just as the Web APIs allow us to do this in the browser 
+        - such as libraries or collections of functions 
+        - HTTP (network access)
+        - FS (file system access)
+        - Access to millions of packed via NPM(node package manager)
+            - groupings of one or more custom modules 
+        - Node gives you access also to C/C++ Libraries such as 
+            - Node bindings
+                - Socket, http, file system, etc   
+            - Chrome V8
+                - JS Engine
+            - Aync I/O
+                - Libuv
+            - Event Loop
+                - Libuv 
+
+################################################################################################################################################
+
+**We will be using LTS 
+
+Introduction to Node.js(FROM WEBSITE)
+
+Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
+
+Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.
+
+A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O 
+primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using 
+non-blocking paradigms, making blocking behavior the exception rather than the norm.
+
+When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the 
+thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
+
+This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing 
+thread concurrency, which could be a significant source of bugs.
+
+Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to write 
+the server-side code in addition to the client-side code without the need to learn a completely different language.
+
+In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their 
+browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable 
+specific experimental features by running Node.js with flags.
+
+Engine Vs. Compiler
+
+Engine: 
+
+################################################################################################################################################
+
+EXPRESS
+
+API: A set of rules that allow programs to talk to each other   
+     - The developer creates the API on the server and allows the client to talk to it 
+
+The internet is a wire that connects client side devices and server side devices 
+    - Servers listen to requests and repspond
+    - Client side devices run programs (usually on a browser)
+        - Usually running JS, HTML/CSS 
+
+How the internet works
+
+- 2 types of devices 
+    - 1. Client Side Devices(Phone, iPad, Laptop)
+        - this contains a browser 
+            - the browser can makes requests to servers by typing in a URL(URL is an interface)
+    - 2. Server 
+        - Server is listening for HTTP requests
+            - The code that listens to the request and generates a response is known as our API
+                - Sometimes we respond with an HTML file 
+                - Sometimes we talk to the database 
+                - Sometimes we talk to a database, plug stuff into a template and then respond with that info 
+
+Servers are listening for HTTP Requests
+
+*******************************
+
+CRUD
+
+Create(Post)   - Make Something : Store something in to a DB
+Read(Get)      - Get Something : Seeing the HTML from the request 
+Update(Put)    - Change Something
+Delete(Delete) - Remove Something 
+
+API is the code that hears Post, Get, Put & Delete 
+
+*******************************
+
+Express: Fast, unopinionated, minimalist web framework for Node.js
+
+With a myriad of HTTP utility methods and middleware at your disposal, 
+creating a robust API is quick and easy
+
+In easier terms, the above just means:
+
+With a myriad of request and response methods and anything that happens in between 
+that request and response (middleware) creating anything that has to do with CRUD 
+quick and easy
+
+*******************************
+
+Mongo DB
+
+Mongo DB is a database that stores our objects
+
+Mongo DB is a collection of documents (each item in an object is a document )
+
+
+*******************************
+
+EJS(Embedded Javascript Templates)
+
+
+//This for loop is creating more li's 
+//When a user comes to the site and makes the get request , the API hears the request and talks to 
+  Mongo DB and when it goes to Mongo, it grabs all the objects that are stored in there and now all these
+  objects can be passed in to the EJS (See code below)
+//When onjects come back from storage, they will be put into an array 
+
+//We can store data into Mongo DB and we use EJS as a really cool template 
+
+// app.get('/') - this is the get request 
+    - once it heard the get, it went to Mongo DB and found all the objects in the collection
+        - once we have all the objects, these are passed to EJS and now EJS created an li for each of the 
+          objects 
+            - then EJS gave us some HTML and then we took the HTML and responded to it 
+
+// EJS Template will always be in a separate file that we can pass stuff in to and do things dynamically(aka will keep/delete the new
+   item on the list even after refreshes)
+
+*******************************
+
+ex. 
+
+index.ejs
+
+<h1>Current Rappers</>
+<ul> class="rappers">
+   <%  for(let i = 0; i < info.length; i++){ %>
+        <li class = "rapper">
+            <span><%= info[i].stageName %></span> // info is our array of objects [{},{},{}]
+            <span><%= info[i].birthName %></span>
+            <span class = "del">delete</span>
+        </li>
+    <% } %>
+    </ul>
+<h2>Add A Rapper:</h2>
+
+GET Request on the server js file
+
+app.get('/', (request,response) => { //the get request is submitted to the url '/'
+    db.collection('rappers).find().toArray() // this then points to the database(db(this is just a variable tied to the db set up previously => const db = etc.etc))
+                                                and points to the collection 'rappers' in the db, finds the db, and puts all those objects
+                                                into an array
+    .then(data => { // Next, it spits that data(our array) back //Also info is just a variable that the data is passed back in to as an array (see info in ejs file above)
+        response.render('index.ejs', {info : data}) // info represents our array in our ejs file 
+                                                    // Our ejs vomits out HTML and we respond to it 
+    })
+    .catch(error => console.log(error))
+})
+
+*******************************
+
+POST Request 
+
+*****
+
+index.ejs 
+
+<h2>Add a rapper:</h2>
+
+<form action="/addRapper" method="POST">
+    <input type="text" placeholder="Stage Name" name="stageName"> //name="stageName" adds to the stageName item in the object
+    <input type="text" placeholder="Birth Name" name="birthName"> //name="birthName" adds to the birthName item in the object
+    <input type="submit">
+</form>
+
+<script src='main.js'></script>
+
+*****
+
+server.js
+
+app.post('/addRapper', (request,response) => { 
+    db.collection('rappers').insertOne(request.body) // We talk to our database, we find the collection, and we are inserting a new document
+                                                     // request.body grabs all the info in the form and it's gonna be the (data structure) object 'rappers'
+    .then(result => {
+        console.log('Rapper added')
+        response.redirect('/') //the response im sending you, just go here (this redirects back to the main page)
+    })
+    .catch(error => console.log(error))
+})
+
+
+
+
+
+*******************************
+
+BUILDING A CRUD APP
+
+https://zellwk.com/blog/crud-express-mongodb/
+
+SEE CLASS 32 FOLDER FOR ALL FILES/EXAMPLES
+
+Key Steps: - Setting up the project 
+                - mkdir api-project
+                - cd api-project 
+                - npm init (This sets up our project and gives us a package.json file where we store
+                            all the info about the modules or packages that we need)
+                - npm install express --save (After this command, it adds the infor to the package.json file)
+                    - ex. ashcarey@Ashs-MacBook-Air-2 Practice % cd Class32
+                        ashcarey@Ashs-MacBook-Air-2 Class32 % ls
+                        ashcarey@Ashs-MacBook-Air-2 Class32 % mkdir apiCreation
+                        ashcarey@Ashs-MacBook-Air-2 Class32 % cd apiCreation
+                        ashcarey@Ashs-MacBook-Air-2 apiCreation % npm init 
+                - touch server.js //This creates the server in your project folder 
+           - Serving Up HTML
+                - app.get('/', (req,res) => { // '/' hearing someone on the server
+                    res.sendFile(_dirname + '/index.html') // responding with HTML
+                }) 
+
+                - app.get('/api/savage', (request, response) => { // hear a specific request
+                    response.json(object) // respond with some json 
+                })
+           - Push to Heroku ( doing these 6 commands will get your app pushed to the world ) //SEE CLASS 32 End Of Video on how to do this
+                - heroku login -i 
+                - heroku create simeple-rap-api
+                - echo "web: node server.js" > Procfile
+                - git add .
+                - git commit -m "changes"
+                - git push heroku main 
+
+
+*******************************
+
+Express Server with an API: 
+
+const express = require('express') 
+const app = express() //this gives us access to all the functions that comes with express 
+const cors = require('cors') // This is a cors module that gets rid of an cors errors for us
+const PORT = 8000
+
+app.use(cors())
+
+let workout = { //AKA Express API
+    'arm': { // This is my own API I had created. This API can be seen in post man under localhost:8000/api/workout 
+        muscleGroup : ['bicep', ' forearm', ' triceps'],
+        exercise : ['Bicep Curl', 'Pull-up', 'Chin-up', 'Concentration curl', 'Bent-over row'],
+        description : 'Biceps are the large muscles located in your upper arm, extending from the shoulder to just above the elbow'
+    },
+    'leg': {
+        muscleGroup : ['quads', 'calves', 'hamstrings'],
+        exercise : ['Leg Extensions', 'Calf Raises', 'Squats'],
+        description : 'The quads are a group of five muscles located in your upper leg at the fron of your thigh.'
+    },'unknown': {
+        muscleGroup : ['unknown','unknown'],
+        exercise : 'unknownwww',
+        description : 'I am unknown'
+    }
+}
+
+
+app.get('/', (request, response) => { // the '/' is where the home page or root is loaded. Once this is ran, a call back function is called(request, response)
+    response.sendFile(__dirname + '/index.html') // once the get function is ran, we want to respond with some HTML and it looks for the HTML wherever the server file is located
+}) // get takes in two values 
+
+app.get('/api/workout/:bodyPart', (request,response) => {
+    const bodyPart = request.params.bodyPart.toLowerCase() // request: look at the request params: look at the parameter bodyPart bodyPart: grab the parameter in the URL toLowerCase(): gets rid of case sensitivity 
+    if(workout[bodyPart]){ // if conditional to default to unknown if name isn't found 
+    response.json(workout[bodyPart]) // pulling from const bodyPart above in line 31
+    //localhost:8000/api/workout/arm  will pull from the arm object in the API above 
+    }else{
+        response.json(workout['unknown']) // this defaults to unknown the the query parameter isnt met 
+    }
+})
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})//another method that comes with Express
+
+*******************************
+
+################################################################################################################################################
+
+################################################################################################################################################
+
+
